@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <style>
+a { color: inherit; } 
+html { overflow-y: hidden; }
+</style>
+ --><title>
+	Agrochum
+</title>
+<link rel="stylesheet" type="text/css"  href="registration.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+     <script type="text/javascript">
+  
+  // When the browser is ready...
+ /*  $(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#register_form").validate({
+    
+        // Specify the validation ruleshttp://code.runnable.com/UmjFlcOS3HIWAABG/how-to-use-modernizr-to-detect-css3-capabilities-and-provide-fallback-on-older-browsers-for-jquery-html5-and-javascript
+        rules: {
+            firstname: "required",
+            lastname: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 5
+            },
+            dob: "required",
+            c_number:"required"
+            
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            firstname: "Please enter your first name",
+            lastname: "Please enter your last name",
+            password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long"
+            },
+            email: "Please enter a valid email address",
+            dob:"Please choose your date of birth",
+            c_number:"Please enter your contact number"
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  }); */
+  
+  </script>
+  
+  <script>
+function validateForm() {
+    var fname = document.getElementById("firstname").value;
+    if (fname == null || fname == "") {
+       document.getElementById("error_msg_fname").innerHTML ="Please Enter your firstName";
+        return false;
+    }
+    
+    var lname = document.getElementById("lastname").value;
+    if (lname == null || lname == "") {
+        document.getElementById("error_msg_lname").innerHTML ="Please Enter your lastName";
+         return false;
+     }
+    
+    var email = document.getElementById("email").value;
+    if (email == null || email == "") {
+        document.getElementById("error_msg_email").innerHTML ="Please Enter your Email Id";
+         return false;
+     }
+   
+    
+    var pwd = document.getElementById("pwd").value;
+    if (pwd == null || pwd == "") {
+        document.getElementById("error_msg_pwd").innerHTML ="Please Enter your Password";
+         return false;
+     }
+   
+    var cpwd = document.getElementById("cpwd").value;
+    if (cpwd == null || cpwd == "") {
+        document.getElementById("error_msg_cpwd").innerHTML ="Please Enter your Comfirmation password ";
+         return false;
+     }
+   
+    return true;
+}
+</script>
+  
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+<style>
+div.ui-datepicker{
+ font-size:10px;
+ background-color: green;
+}
+
+</style>
+  <script>
+$(document).ready(function(){
+    $("#checkemail").click(function(){
+    
+   var emailValue = $("#email").val();
+        $.post("RegistrationClient",
+        {
+          method:"emailAvailability",
+          email: emailValue
+          
+        },
+        function(data){
+           obj = JSON.parse(data);
+           if(obj.status=='available'){
+           document.getElementById("statusDisplay").style.color = "green";
+           }else if(obj.status=='Not available'){
+             document.getElementById("statusDisplay").style.color = "red";
+           }
+           
+      document.getElementById("statusDisplay").innerHTML  =   obj.status;
+        });
+    });
+});
+</script>
+
+</head>
+<body bgcolor="white">
+	<header>
+        <table align="center" bgcolor="green" border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tr>
+<td>
+   <p align="center"><strong><font color="green" size="3">&nbsp;<a class="navwhite" href="main.html"><font color="#ffffff">Home</font> </a><font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="about.html"><font color="#ffffff">About&nbsp; </font></a><font color="#ffffff">&nbsp; |&nbsp;</font> <a class="navwhite" href="login.html"><font color="#ffffff">Login</font></a> <font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="registration.html"><font color="#ffffff">Registration</font></a></font></strong></p>
+            </td>
+        </tr>
+        </header>
+        </table>
+    <div id="main">
+		<img class="agrochum" src="leafz.jpg"  width="1350px" height="200px" top="10"><h1 align="center">
+			<font face="Book Antiqua" size="72" color="green">Agrochum Registration</font></h1></div>
+		            </body>
+	</tbody>
+			</table><br/>
+ <body>         
+<form id="register_form" action="RegistrationClient" method="post" onsubmit=" return validateForm()">
+<p>
+<div class="row"><lable for="FirstName:">FirstName: <br/>
+</lable><input type="text" id="firstname" name="firstname" size="" maxlength="10" placeholder="Enter your First Name" onfocus="if(this.value=='Search')this.value='':null"><br/></div>
+<div align="center"><span style="color: red"  id="error_msg_fname"></span></div>
+<div class="row"><lable for="LastName">LastName: <br/>
+</lable><input type="text" id="lastname" name="lastname" size="" maxlength="10" placeholder="Enter your Last Name" onfocus="this.value==this.defaultValue?this.value='':null"><br/></div>
+<div align="center"><span style="color: red"  id="error_msg_lname"></span></div>
+<div class="row"><lable>Email: <br/>
+</lable><input type="text" id="email" name="email" size="" maxlength="20" placeholder="Enter your Email" onfocus="this.value==this.defaultValue?this.value='':null"><br/></div>
+<div align="center"><span style="color: red"  id="error_msg_email"></span></div>
+<div class="row"><a id ="checkemail" href="#">Check Availability</a> </br></div>
+<div class="row"><span id="statusDisplay"></span></br></div>
+<div class="row"><lable for="Password">Password: <br/>
+</lable><input type="password" id="pwd" name="password" size="" maxlength="10" placeholder="Enter your Password"><br/></div>
+<div align="center"><span style="color: red"  id="error_msg_pwd"></span></div>
+<div class="row"><lable for="Password"> Confirm Password: <br/>
+</lable><input type="password" id="cpwd" name="cpassword" size="" maxlength="10" placeholder="Enter your Confirmation Password"><br/></div>
+<div align="center"><span style="color: red"  id="error_msg_cpwd"></span></div>
+<!--
+<div class="row"><lable>Choose your Gender:<br/>
+</lable>
+
+<input type="radio" id="Gender" name="gender" value="male" checked="checked">male
+<input type="radio" id="Gender" name="gender" value="female">female<br/></br></div>
+ <div class="row"><lable>Date Of  Birth: </br>
+<p><input type="text" id="datepicker" name="dob" placeholder="Enter your Date of Birth" onfocus="this.value==this.defaultValue?this.value='':null"></p>
+<div class="row"><lable>Phone: <br/>
+</lable><input type="tel" id="cn" name="c_number" size="" maxlength="10" placeholder="Enter your Phone No" onfocus="this.value==this.defaultValue?this.value='':null"><br/></div>
+ -->
+<div class="row"><input type="Submit" value="Submit"></div></p>
+</form>
+</body>
+<table align="center" bgcolor="green" border="0" cellpadding="0" cellspacing="0" width="100%">
+<footer>
+<tr>
+<td>
+    <p align="center"><strong><font color="green" size="3">&nbsp;<a class="navwhite" href="www.fb.com"><font color="#ffffff">Facebook</font> </a><font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="changethis.htm"><font color="#ffffff">Contact Us &nbsp; </font></strong></p>
+            </td>
+        </tr>
+    </footer>
+</table>
+<p align="center"><font size="1"><font size="1"><font size="1"><font size="1"><font size="1">&copy Copyright 2015,Agrochum</font><font size="1">&nbsp; </font></font></font></font></font></p>
+</html>

@@ -1,0 +1,23 @@
+
+#theform{
+	padding:15px;
+	
+
+}
+.row{
+	display:table row;
+	padding:4px;
+	text-align:center;
+}
+
+.row label{
+	display:table row;
+	padding:4px;
+	text-align:center;
+}
+
+.row input{
+	display:table row;
+	padding:4px;
+	text-align:center;
+}

@@ -1,0 +1,129 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+	Agrochum
+</title>
+<link rel="stylesheet" type="text/css"  href="main.css">
+<style type="text/css">
+
+header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+header.clone {
+  position: fixed;
+  top: -65px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
+}
+
+body.down header.clone {
+  top: 0;
+}
+
+</style>
+
+</head>
+<body bgcolor="white">
+	 <header>
+        <table align="center" bgcolor="green" border="0" cellpadding="0" cellspacing="0" width="100%">
+   
+<tr>
+<td>
+    <p align="center"><strong><font color="green" size="3">&nbsp;<a class="navwhite" href="main.html"><font color="#ffffff">Home</font> </a><font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="about.html"><font color="#ffffff">About&nbsp; </font></a><font color="#ffffff">&nbsp; |&nbsp;</font> <a class="navwhite" href="login.html"><font color="#ffffff">Login</font></a> <font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="registration.html"><font color="#ffffff">Registration</font></a></font></strong></p>
+            </td>
+        </tr>
+        </header>
+        </table>
+    
+
+<div id="main">
+		<p><img class="agrochum" src="leafz.jpg"  width="1350px" height="200px" top="10"><h1 align="center">
+			<font face="Book Antiqua" size="72" color="green">Welcome To Agrochum</font></h1></p></div>
+<style type="text/css">
+body{background-color:white;color:white;}
+h1{font-family:tahoma;text-align:center;font-weight:bold;}
+#img{display:-webkit-box;-webkit-box-pack:center;opacity:0.8;}
+</style>
+<script type="text/javascript">
+
+var arr = [];
+
+arr[0]= new Image();
+arr[0].src = "1.jpg";
+
+arr[1]= new Image();
+arr[1].src = "2.jpg";
+
+arr[2]= new Image();
+arr[2].src = "3.jpg";
+
+arr[3]=new Image();
+arr[3].src="4.jpg";
+
+var i=0;
+
+function slide(){
+ document.getElementById("image1").src= arr[i].src;
+ i++;
+ if(i==arr.length){
+  i=0;
+ }
+ setTimeout(function(){ slide(); },2000);
+}
+
+</script>
+</head>
+
+<body onLoad="slide('image1',arr);">
+<h1>WELCOME</h1>
+<div id="img"><img id="image1" height="400px" width="600px" border="5" style="border-color:white;" /></div>
+
+		            </body>
+
+
+
+
+            	<div>
+        <tr>
+			<td bgcolor="green" width="" height="">
+			<p align="center"><strong><font color="white" size="3">&nbsp;
+            <a class="navwhite" href="login.html">
+            	<font color="#ffffff">Login</font></a>
+            <font color="#ffffff">&nbsp; | &nbsp; </font>
+            <a class="navwhite" href="registration.html">
+            	<font color="#ffffff">Registration 
+		   </a></font></strong></p>
+		</td>
+			
+		</tr>
+		</div>
+                        <p><strong><strong>&nbsp;</strong></strong></p>
+
+                        <p><strong><strong>&nbsp;</strong></strong></p>
+
+                        <p><strong><strong>&nbsp;</strong></strong></p>
+
+                        <p><strong><strong>&nbsp;</strong></strong></p>
+
+                        <p><strong><strong>&nbsp;</strong></strong></p></br>
+<table align="center" bgcolor="green" border="0" cellpadding="0" cellspacing="0" width="100%">
+<footer>
+<tr>
+<td>
+    <p align="center"><strong><font color="green" size="3">&nbsp;<a class="navwhite" href="https://www.facebook.com/profile/picture/view/?profile_id=907384859352962"><font color="#ffffff">Facebook</font> </a><font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="contact.html"><font color="#ffffff">Contact Us &nbsp; </font></strong></p>
+            </td>
+        </tr>
+    </footer>
+</table>
+
+<p align="center"><font size="1"><font size="1"><font size="1"><font size="1"><font size="1">&copy Copyright 2015,Agrochum</font><font size="1">&nbsp; </font></font></font></font></font></p>
+</body>
+</html>

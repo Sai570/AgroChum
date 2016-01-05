@@ -1,0 +1,27 @@
+
+#theform{
+	color:white;
+	padding:15px;
+	background:#157882; 
+	border: solid 2px black;
+	margin-right:450px;
+	margin-left: 450px;
+
+}
+.row{
+	display:table row;
+	padding:4px;
+	text-align:center;
+}
+
+.row label{
+	display:table row;
+	padding:4px;
+	text-align:center;
+}
+
+.row input{
+	display:table row;
+	padding:4px;
+	text-align:center;
+}

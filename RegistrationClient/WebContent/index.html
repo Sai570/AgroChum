@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+            
+<form  action=" " method="post">
+<p>
+<div class="row"><lable for="FirstName:">FirstName: <br/>
+</lable><input type="text" id="firstname" name="f_name" size="" maxlength="10" placeholder="Enter your First Name" onfocus="if(this.value=='Search')this.value=''" 
+onblur="if(this.value=='')this.value='Search'"><br/></div>
+<div class="row"><lable for="LastName">LastName: <br/>
+</lable><input type="text" id="lastname" name="l_name" size="" maxlength="10" placeholder="Enter your Last Name" onfocus="this.value==this.defaultValue?this.value='':null"><br/></div>
+<div class="row"><lable>Email: <br/>
+</lable><input type="text" id="e" name="e" size="" maxlength="20" placeholder="Enter your Email" onfocus="this.value==this.defaultValue?this.value='':null"><br/></div>
+<div class="row"><lable for="Password">Password: <br/>
+</lable><input type="text" id="password" name="pwd" size="" maxlength="10" placeholder="Enter your Password"><br/></div>
+<div class="row"><lable>Choose your Gender:<br/>
+</lable>
+<input type="radio" id="Gender" name="gender" value="male" checked="checked">male
+<input type="radio" id="Gender" name="gender" value="female">female<br/></br></div>
+<div class="row"><lable>Date Of  Birth: </br>
+<p><input type="text" id="datepicker" placeholder="Enter your Date of Birth" onfocus="this.value==this.defaultValue?this.value='':null"></p>
+<div class="row"><lable>Phone: <br/>
+</lable><input type="tel" id="cn" name="cn" size="" maxlength="10" placeholder="Enter your Phone No" onfocus="this.value==this.defaultValue?this.value='':null"><br/></div>
+
+<div class="row"><input type="button" value="Submit"></div></p>
+</form>
+
+</body>
+</html>

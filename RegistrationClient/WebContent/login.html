@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+	Agrochum
+</title>
+<link rel="stylesheet" type="text/css"  href="login.css">
+
+
+
+
+ <script>
+function validateForm() {
+    
+    var email = document.getElementById("email").value;
+    if (email == null || email == "") {
+        document.getElementById("error_msg_email").innerHTML ="Please Enter your Email Id";
+         return false;
+     }
+   
+    
+    var pwd = document.getElementById("password").value;
+    if (pwd == null || pwd == "") {
+        document.getElementById("error_msg_pwd").innerHTML ="Please Enter your Password";
+         return false;
+     }
+   
+   
+    return true;
+}
+</script>
+ 
+</head>
+<body bgcolor="white">
+	<header>
+        <table align="center" bgcolor="green" border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tr>
+<td>
+   <p align="center"><strong><font color="green" size="3">&nbsp;<a class="navwhite" href="main.html"><font color="#ffffff">Home</font> </a><font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="about.html"><font color="#ffffff">About&nbsp; </font></a><font color="#ffffff">&nbsp; |&nbsp;</font> <a class="navwhite" href="login.html"><font color="#ffffff">Login</font></a> <font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="registration.html"><font color="#ffffff">Registration</font></a></font></strong></p>
+            </td>
+        </tr>
+        </header>
+        </table>
+    <div id="main">
+		<img class="agrochum" src="leafz.jpg"  width="1350px" height="200px" top="10"><h1 align="center">
+			<font face="Book Antiqua" size="72" color="green">Agrochum Login</font></h1></div>
+		            </body>
+	</tbody>
+			</table><br/>
+
+<form  action="LoginClient" method="post" onsubmit="return validateForm()">
+<div class="row"><label>User Name or Email Address<br/>
+</label><input type="text" id="email" name="email"maxlength="30" border="1px" placeholder="Enter your User Name"></div><br/>
+<div align="center"><span style="color: red"  id="error_msg_email"></span></div>
+<div class="row"><label>Password<br/>
+</label><input type="password" id="password" name="password" maxlength="10" placeholder="Enter your Password"></div><br/>
+<div align="center"><span style="color: red"  id="error_msg_pwd"></span></div>
+<div class="row"><!-- <input type="submit" value="Login"> --><p align="center"><input type="image" src="login1.png" alt="submit" width="90" height="50"></p>
+</div></form>
+
+</form>
+</body>
+
+                        <p><strong><strong>&nbsp;</strong></strong></p>
+<table align="center" bgcolor="green" border="0" cellpadding="0" cellspacing="0" width="100%">
+<footer>
+<tr>
+<td>
+    <p align="center"><strong><font color="green" size="3">&nbsp;<a class="navwhite" href="www.fb.com"><font color="#ffffff">Facebook</font> </a><font color="#ffffff">&nbsp; |&nbsp; </font><a class="navwhite" href="changethis.htm"><font color="#ffffff">Contact Us &nbsp; </font></strong></p>
+            </td>
+        </tr>
+    </footer>
+</table>
+<p align="center"><font size="1"><font size="1"><font size="1"><font size="1"><font size="1">&copy Copyright 2015,Agrochum</font><font size="1">&nbsp; </font></font></font></font></font></p>
+</html>
